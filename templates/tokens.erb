@@ -1,0 +1,77 @@
+{
+    "access": {
+        "token": {
+            "issued_at": "2014-11-08T00:53:13.169407",
+            "expires": "2014-11-09T00:53:13Z",
+	    "id": "0000111122223333444455556666777788889999",
+            "tenant": {
+                "description": null,
+                "enabled": true,
+                "id": "<%= tenant_id %>",
+                "name": "<%= username %>"
+            }
+        },
+        "serviceCatalog": [
+            {
+                "endpoints": [
+                    {
+                        "adminURL": "http://<%= my_ip %>:<%= web_port %>/compute/v2/<% tenant_id %>",
+                        "region": "RegionOne",
+                        "internalURL": "http://<%= my_ip %>:<%= web_port %>/compute/v2/<% tenant_id %>",
+                        "id": "compute_endpoint_id",
+                        "publicURL": "http://<%= my_ip %>:<%= web_port %>/compute/v2/<% tenant_id %>"
+                    }
+                ],
+                "endpoints_links": [],
+                "type": "compute",
+                "name": "nova"
+            },
+            {
+                "endpoints": [
+                    {
+                        "adminURL": "http://<%= my_ip %>:<%= web_port %>/image",
+                        "region": "RegionOne",
+                        "internalURL": "http://<%= my_ip %>:<%= web_port %>/image",
+                        "id": "compute_endpoint_id",
+                        "publicURL": "http://<%= my_ip %>:<%= web_port %>/image"
+                    }
+                ],
+                "endpoints_links": [],
+                "type": "image",
+                "name": "glance"
+            },
+            {
+                "endpoints": [
+                    {
+                        "adminURL": "http://<%= my_ip %>:<%= web_port %>/identity",
+                        "region": "RegionOne",
+                        "internalURL": "http://<%= my_ip %>:<%= web_port %>/identity",
+                        "id": "identity_endpoint_id",
+                        "publicURL": "http://<%= my_ip %>:<%= web_port %>/identity"
+                    }
+                ],
+                "endpoints_links": [],
+                "type": "identity",
+                "name": "keystone"
+            }
+        ],
+        "user": {
+            "username": "<%= username %>",
+            "roles_links": [],
+            "id": "9a6590b2ab024747bc2167c4e064d00d",
+            "roles": [
+                {
+                    "name": "<%= role %>"
+                }
+            ],
+            "name": "<%= username %>"
+        },
+        "metadata": {
+            "is_admin": <%= is_admin %>,
+            "roles": [
+                "7598ac3c634d4c3da4b9126a5f67ca2b",
+                "f95c0ab82d6045d9805033ee1fbc80d4"
+            ]
+        }
+    }
+}
